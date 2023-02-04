@@ -1,0 +1,19 @@
+.sidebar {
+    .right-sidebar {
+        position: fixed;
+        .heading {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin: 0;
+        }
+        .filters {
+            margin-top: 0.5rem;
+            .filter {
+                margin-top: 0.5rem;
+                margin-right: 0.5rem;
+                border: solid 1px var(--gray-4);
+                border-radius: 0.625rem;
+            }
+        }
+    }
+}

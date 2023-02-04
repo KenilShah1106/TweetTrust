@@ -1,0 +1,101 @@
+.hero {
+    .hero-body {
+        .user-card {
+            width: 200px !important;
+            .user-card-header {
+                display: flex;
+                .user-details {
+                    margin-left: 0.75rem;
+                    .user-name {
+                        margin: 0;
+                        display: block;
+                        color: #333;
+                        font-size: 1rem;
+                        font-weight: 600;
+                        max-width: 120px;
+                    }
+                    .user-name:hover {
+                        color: var(--primary);
+                    }
+                }
+            }
+            .user-stats {
+                margin-top: 0.75rem;
+                p {
+                        //top r-l bottom
+                    margin: 0 0 0.25rem;
+                }
+                .stat {
+                    font-weight: 700;
+                    color: var(--primary);
+                }
+            }
+        }
+        .profile-details {
+            align-self: center;
+            .user-name {
+                font-size: 1.5rem;
+                font-weight: 600;
+            }
+            .user-location {
+                font-size: 1rem;
+                font-weight: 500;
+                color: var(--gray-2);
+            }
+            .user-about {
+                font-size: 1rem;
+                font-weight: 400;
+                color: var(--gray-3);
+            }
+            .stat-container {
+                font-size: 16px;
+                font-weight: 600;
+                color: var(--gray-2);
+                .stat {
+                    color: var(--outline-primary-text);
+                }
+            }
+        }
+        .user-activity {
+            .table {
+                border-radius: 10px;
+                overflow: hidden;
+
+                tbody {
+                    tr {
+                        background: #fff;
+                    }
+                    .status {
+                        font-size: 1.125rem;
+                    }
+                }
+            }
+            .empty-state-card {
+                width: 100%;
+                min-height: 100px;
+                background: #EEF7FC;
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .empty-state-card-body {
+                    padding: 5rem 0;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    img {
+                        width: 280px;
+                        height: 200px;
+                    }
+                    p {
+                        font-size: 1rem;
+                        font-weight: 400;
+                    }
+                }
+            }
+
+        }
+
+    }
+}

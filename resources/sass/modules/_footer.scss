@@ -1,0 +1,15 @@
+.footer {
+    position: relative;
+    z-index: 20;
+    height: 3.75rem; // 60px;
+    background: #333;
+    color: #FFF;
+    text-align: center;
+    // z-index: 10;
+
+    .footer-body {
+        font-size: 1.125rem;
+        font-weight: 600;
+        padding: 1rem;
+    }
+}

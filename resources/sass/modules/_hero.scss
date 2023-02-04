@@ -1,0 +1,271 @@
+.fast-filters {
+    margin: 0 0.5rem;
+    .fast-filter {
+        color: #333;
+        display: inline-block;
+        width: 100%;
+        padding: 0.25rem 0.5rem; // 4px 8px
+    }
+}
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: 92vh;
+    background: var(--hero-bg);
+
+    .btn {
+        padding: 0.75rem 1.25rem;
+    }
+    hr {
+        margin: 0 -1rem;
+    }
+    label {
+        font-size: 1rem;
+        font-weight: 500;
+    }
+    input {
+        height: auto;
+    }
+    .hero-header {
+        .hero-title {
+            font-size: 1.5rem; //24px
+            font-weight: 500;
+        }
+        .count {
+            font-size: 0.875rem;  // 14px
+            font-weight: 400;
+        }
+
+    }
+
+    .hero-body {
+        .section-card  {
+            display: flex;
+            width: 100%;
+            background: white;
+            border-radius: 0.625rem;
+            box-shadow: 0 8px 16px 0 rgba(52,144,220, 0.3);
+
+            hr {
+                     // top   r-l  bottom
+                margin: 1ren -1rem 0;
+                // Note: to get a full width hr just add negative margin equivalent to the padding of the container
+            }
+            .comments-section {
+                .post-comment-section {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    .comment-field {
+                        width: 85%;
+                        max-height: 33px;
+                        font-size: 0.75rem;
+                        font-weight: 500;
+                    }
+                }
+                .comments {
+                    .comment {
+                        padding: 0.5rem 0.75rem;
+                        border: solid 1px var(--gray-5);
+                        border-radius: 0.625rem;
+                        font-size: 0.75rem;
+                        font-weight: 400;
+
+                        .comment-author {
+                            font-weight: 600;
+                            color: var(--primary);
+                        }
+                        .comment-action {
+                            padding: 0.125rem 0.25rem; // 2px 4px
+                            border-radius: 5px;
+                            margin-right: 0.5rem;
+                        }
+                        .comment-flag {
+                            color: #000;
+                        }
+                    }
+                    .show-more-btn {
+                        font-size: 0.75rem;
+                        font-weight: 500;
+                    }
+                }
+
+
+            }
+            .section-details {
+                width: 100%;
+            }
+            .section-header {
+                display: flex;
+                align-items: center;
+                .section-header-right {
+                    align-self: start;
+                }
+                .user-info {
+                    font-size: 0.75rem;
+                    font-weight: 300;
+                }
+                .author-name {
+                    padding-right: 0.125rem;
+                    font-weight: 500;
+                    color: var(--primary);
+                }
+
+            }
+            .tags-container {
+                display: flex;
+                align-items: center;
+                span {
+                    font-size: 0.75rem;
+                    font-weight: 400;
+                }
+            }
+            .tag {
+                font-size: 0.625rem;
+                font-weight: 500;
+                padding-top: 0.25rem;
+                padding-bottom: 0.25rem;
+                padding-right: 0.75rem;
+                padding-left: 0.75rem;
+                margin-left: 0.25rem;
+            }
+            .tag:hover {
+                background: var(--info);
+                color: #fff;
+            }
+            .section-title {
+                color: #000;
+                font-size: 1.125rem;
+                font-weight: 700;
+            }
+            .section-subtitle {
+                display: flex;
+                align-items: center;
+            }
+
+            .section-body {
+                margin-top: 0.125rem;
+                .section-title:hover{
+                    color: var(--primary);
+                    text-decoration: none;
+                }
+                .section-content {
+                    margin-top: 0.5rem;
+                    margin-bottom: 0;
+                    font-size: 1rem;
+                    font-weight: 400;
+                    color: var(--gray-1);
+                }
+            }
+            .section-footer {
+                align-items: center;
+                justify-content: space-between;
+                .section-stats {
+                    display: flex;
+                    align-items: center;
+                    font-size: 0.875rem;  // 14px
+                    font-weight: 500;
+                    i {
+                        font-size: 1rem;
+                    }
+                    // gave 5px padding here instead of 4px to match the baseline of the view question btn
+                    .stat {
+                        margin-right: 0.5rem;
+                        padding-top: 5px;
+                        padding-bottom: 5px;
+                        padding-right: 0.75rem;
+                    }
+                    .best-answer-badge {
+                        padding: 5px 0.75rem;
+                        border-radius: 0.625rem;
+                        font-size: 0.875rem;  // 14px
+                        font-weight: 400;
+                        background: var(--success);
+                        color: #fff;
+                    }
+                }
+                .section-action-bar {
+                    display: flex;
+                    align-items: center;
+                    font-size: 1rem;
+                    font-weight: 500;
+                    .action {
+                        padding: 0.25rem 1rem;
+                        margin-right: 0.5rem;
+                        text-align: center;
+                        border-radius: 0.625rem;
+                        i {
+                            font-size: 1rem;
+                        }
+
+                        &.bookmark, &.flag {
+                            color: #000;
+                        }
+                    }
+                }
+
+                // .view-question-btn-container {
+                //     .view-question-btn {
+                //         font-size: 12px;
+                //     }
+                // }
+
+            }
+        }
+        .user-info-container {
+            font-size: 1rem;
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+
+            .author-info {
+                display: flex;
+                align-items: center;
+
+                .author-name {
+                    font-size: 1rem;
+                    font-weight: 600;
+                    margin: 0;
+                    display: block;
+                    color: #000;
+                }
+                .reputation {
+                    font-size: 0.75rem;
+                    font-weight: 300;
+
+                }
+            }
+        }
+        .date {
+            font-weight: 400;
+            font-size: 0.75rem;
+            color: var(--gray-1);
+        }
+        .author-actions {
+            display: flex;
+            align-self: start;
+            justify-content: center;
+            i {
+                font-size: 0.75rem;
+                margin-right: 0.25rem;
+            }
+        }
+        .section-heading {
+            font-size: 1.125rem;
+            font-weight: 500;
+        }
+
+
+    }
+    trix-editor {
+        background: white;
+        border-radius: 0.625rem;
+        min-height: 150px;
+        resize: vertical;
+    }
+    trix-toolbar {
+        button {
+            background: white;
+        }
+    }
+}

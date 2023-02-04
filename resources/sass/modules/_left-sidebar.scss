@@ -1,0 +1,102 @@
+/**************************
+    LEFT SIDEBAR STYLES
+***************************/
+.col-half {
+    width: 4%;
+}
+.sidebar {
+    // position: sticky;
+    position: fixed;
+    top: 3.75rem; // 60px;
+    left: 0;
+    z-index: 10;
+    width: 4%;
+    .left-sidebar {
+        position: relative;
+        z-index: 5;
+        background:var(--outline-primary-text);
+        overflow-y: auto;
+        // max-height: calc(100vh - header height - padding of list group item)
+        height: calc(100vh - 3.75rem);
+        border-top-right-radius: 0.625rem;
+        border-bottom-right-radius: 0.625rem;
+        .sidebar-item {
+            text-align: center;
+        }
+
+    }
+    .left-sidebar-hover {
+        position: absolute;
+        top: 0;
+        left: 90%;
+        z-index: 1;
+        width: 300%;
+        background: var(--outline-primary-text);;
+        font-size: 1rem;
+        font-weight: 500;
+        overflow-y: auto;
+        // height: calc(100vh - header height)
+        height: calc(100vh - 3.75rem);
+        border-top-right-radius: 0.625rem;
+        border-bottom-right-radius: 0.625rem;
+        visibility: hidden;
+        transform: translateX(-100%);
+        transition:
+                transform .5s ease-in-out,
+                visibility .5s ease-in-out;
+        .sidebar-item {
+            height: 38.4px;
+                 //  top      r-l    bottom
+            padding: 0.375rem 0.75rem 0; // 6px 12px 0
+            i {
+                font-size: 0.75rem;
+            }
+        }
+    }
+    .list-group {
+        padding: 0 0.5rem;
+        .list-group-item {
+            margin-bottom: 0.5rem;
+            padding: 0;
+            background:var(--outline-primary-text);
+            border: none;
+        }
+    }
+    .sidebar-item {
+        width: 100%;
+        display: inline-block;
+        background: var(--outline-primary-text);
+        color: #fff;
+        border-radius: 0.625rem;
+        transition:
+            background-color .5s ease-in-out,
+            color .5s ease-in-out;
+        i {
+            font-size: 1.5rem; // 24px
+        }
+    }
+
+    .sidebar-item:hover {
+        cursor: pointer;
+        background: var(--outline-primary-bg);
+        color: var(--outline-primary-text);
+    }
+    .dropdown {
+        .dropdown-menu {
+            display: block;
+            transform: scaleX(1) scaleY(0);
+            transition: all 0.5s ease;
+            transform-origin: top;
+        }
+        &:hover {
+            .dropdown-menu {
+                transform: scale(1);
+            }
+        }
+    }
+}
+
+// .sidebar:hover .left-sidebar-hover{
+//     visibility: visible;
+//     transform: translateX(0);
+// }

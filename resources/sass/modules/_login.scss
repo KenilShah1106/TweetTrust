@@ -1,0 +1,92 @@
+.login-card,
+.signup-card {
+    position: relative;
+    background: #fff;
+    border-radius: 50px;
+    box-shadow: 0 8px 16px 0 rgba(52,144,220, 0.3);
+    padding: 1.5rem 1rem;
+}
+ .sign-up-form, .sign-in-form {
+    padding: 4rem 8rem;
+}
+form a {
+    display: inline-block;
+    margin-bottom: 3rem;
+}
+.login-card,
+.signup-card {
+    form {
+       margin-top: 2rem;
+    }
+    .form-control {
+        margin-bottom: 1.2em;
+        padding: .6rem 1rem;
+        border-radius: 10px;
+    }
+    .submit-btn {
+        border-radius: 25px;
+        background: #08AEEA;
+        background-size: 200%;
+        background-image: linear-gradient(to right, #08AEEA 0%, #62F8B5 60%, #08AEEA 100%);
+        color: #FFF;
+        padding: .7rem 4rem;
+        font-weight: bold;
+    }
+    .submit-btn:hover {
+        color: #FFF;
+        background-position: right;
+    }
+    .overlay-container {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 50%;
+        border-radius: 50px;
+        background: #08AEEA;
+        color: #FFF;
+        transition: right .5s ease-in-out;
+        /* z-index: -1; */
+    }
+    .overlay {
+        position: absolute;
+        background: #FFF;
+        width: 100%;
+        height: 100%;
+    }
+    .overlay-content {
+        transform: translateY(150px);
+    }
+    .overlay-desc, .overlay-btn{
+        margin-top: 1rem;
+    }
+    .overlay-btn {
+        display: inline-block;
+        border: solid 2px #FFF;
+        color: #FFF;
+        background: #08AEEA;
+        border-radius: 25px;
+        padding: .7rem 4rem;
+        transition: all .5s ease-in-out;
+    }
+    .overlay-btn:hover {
+        color: #08AEEA;
+        background: #FFF;
+        border: solid 2px #08AEEA;
+    }
+
+    .error {
+        color: red;
+        font-size: .8rem;
+    }
+}
+.login-card {
+    .overlay-container {
+        right: 0;
+    }
+}
+.signup-card {
+    .overlay-container {
+        left: 0;
+    }
+}
+

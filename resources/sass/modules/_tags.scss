@@ -1,0 +1,25 @@
+.hero {
+    .hero-body {
+        .tag-card {
+            width: 180px !important;
+
+            .tag {
+                padding: 0.5rem 1rem;
+                font-size: 0.75rem;
+                font-weight: 600;
+            }
+            .tag-desc {
+                font-size: 0.875rem;  // 14px
+                font-weight: 500;
+                color: var(--gray-1);
+                max-width: 165px;
+            }
+            .questions-count {
+                display: flex;
+                align-items: center;
+                color: var(--gray-1);
+            }
+        }
+    }
+}
+

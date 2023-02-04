@@ -1,0 +1,203 @@
+/**************************
+        CUSTOM STYLES
+***************************/
+:root {
+    --gray-0: #333;
+    --gray-1: #4d4d4d;
+    --gray-2: #666;
+    --gray-3: #808080;
+    --gray-4: #b2b2b2;
+    --gray-5: #ccc;
+    --gray-6: #e5e5e5;
+
+    --body-bg: #EEF7FC;
+    --hero-bg: #DCEFF9;
+
+    --info: #17A2B8;
+
+    --outline-primary-bg: #CBE2F6;
+    --outline-info-bg: #BBEEF7;
+    --outline-success-bg: #C4EED6;
+    --outline-danger-bg: #FBE0E0;
+
+    --outline-primary-text: #195A90;
+    --outline-success-text: #217344;
+    --outline-danger-text: #C61F1B;
+}
+/**************************
+        GENERAL STYLES
+***************************/
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Poppins' , sans-serif;
+    background: var(--body-bg);
+    min-height: 92vh;
+    position: relative;
+    scroll-behavior: smooth;
+}
+.row {
+    margin: 0;
+}
+.container-fluid > .row {
+    margin: 0;
+    width: 100%;
+}
+.container-fluid > .row [class*=col-]{
+    padding: 0 1.25rem; // 20px
+    box-sizing: border-box;
+}
+.container-fluid {
+    margin-left: 2.5rem; //40px
+    margin-right: 2.5rem;
+}
+a:hover {
+    text-decoration: none;
+}
+hr {
+    border-color: var(--gray-4);
+}
+.form-control {
+    color: #000!important;
+}
+.w100 {
+    width: 100% !important;
+}
+.w75 {
+    width: 75% !important;
+}
+.w50 {
+    width: 50% !important;
+}
+.w25 {
+    width: 25% !important;
+}
+.w20 {
+    width: 20% !important;
+}
+.w10 {
+    width: 10% !important;
+}
+.w0 {
+    width: 0 !important;
+}
+.box-shadow {
+    border-color: transparent;
+    box-shadow: 0 8px 16px 0 rgba(52,144,220, 0.3);
+}
+.form-control.box-shadow {
+    &:focus {
+        box-shadow: 0 8px 16px 0 rgba(52,144,220, 0.3);
+    }
+}
+/**************************
+        BORDER STYLES
+***************************/
+.no-border {
+    border: none;
+}
+.br-10 {
+    border-radius: 0.625rem;
+}
+.br-0 {
+    border-radius: 0;
+}
+.border-width-1 {
+    border-width: 1px!important;
+}
+.border-width-2 {
+    border-width: 2px!important;
+}
+.border-width-3 {
+    border-width: 3px!important;
+}
+.border-width-4 {
+    border-width: 4px!important;
+}
+.border-width-5 {
+    border-width: 5px!important;
+}
+/**************************
+     BACKGROUND COLOR
+***************************/
+.bg-white {
+    background-color: white;
+    color: #000;
+}
+.bg-body {
+    background-color: var(--body-bg);
+    color: #000;
+}
+.bg-outline-info {
+    background: var(--outline-info-bg);
+    color: var(--outline-primary-text);
+}
+.bg-outline-primary {
+    background: var(--outline-primary-bg);
+    color: var(--outline-primary-text);
+}
+.bg-outline-success {
+    background: var(--outline-success-bg);
+    color: var(--outline-success-text);
+}
+.bg-outline-danger {
+    background: var(--outline-danger-bg);
+    color: var(--outline-danger-text);
+}
+/**************************
+     BUTTON STYLES
+***************************/
+.btn {
+    border-radius: 0.625rem; //10px
+    transition: all .4s ease-in-out;
+    &:focus {
+        box-shadow: none;
+    }
+}
+.btn-sm {
+          // 8px     12px
+    padding: 0.5rem 0.75rem !important;
+    font-size: 0.75rem;
+}
+.btn-info {
+    background: var(--info);
+    color: #fff;
+}
+.btn-info:hover, .btn-info:focus {
+    background-color: #148C9F;
+    color: #fff;
+}
+.btn-info:not(:disabled):not(.disabled):active, .btn-info:not(:disabled):not(.disabled).active, .show > .btn-info.dropdown-toggle {
+    background-color: #148C9F;
+    color: #fff;
+}
+.btn-outline-info {
+    background: var(--outline-info-bg);
+    color: var(--outline-primary-text);
+    border: none;
+    transition: all .4s ease-in-out;
+}
+.btn-outline-info:hover {
+    background: var(--info);
+    color: #fff;
+}
+.btn-outline-primary {
+    background: var(--outline-primary-bg);
+    color: var(--outline-primary-text);
+    border: none;
+    transition: all .4s ease-in-out;
+}
+.btn-outline-success {
+    background: var(--outline-success-bg);
+    color: var(--outline-success-text);
+    border: none;
+    transition: all .4s ease-in-out;
+}
+.btn-outline-danger {
+    background: var(--outline-danger-bg);
+    color: var(--outline-danger-text);
+    border: none;
+    transition: all .4s ease-in-out;
+}
