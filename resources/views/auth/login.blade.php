@@ -76,7 +76,7 @@
                         <div class="col-md-12">
                             <div class="overlay">
                                 <div class="overlay-content text-center">
-                                    <h2 class="overlay-heading">New to TweetTrust?</h2>
+                                    <h2 class="overlay-heading">New to CaffeineOverflow?</h2>
                                     <p class="overlay-desc">Enter personal details and sign up here!</p>
                                     <a href="{{route('register')}}" class="overlay-btn" id="overlay-sign-up-btn">SIGN UP</a>
                                 </div>

@@ -47,7 +47,7 @@ class NewQuestionAdded extends Notification
         return (new MailMessage)
                     ->line($this->msg)
                     ->action('View Question', url(route('frontend.questions.show', $this->question->id)))
-                    ->line('Thank you for using TweetTrust!');
+                    ->line('Thank you for using CaffeineOverflow!');
     }
 
     /**

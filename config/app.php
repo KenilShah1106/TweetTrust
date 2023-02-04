@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'TweetTrust'),
+    'name' => env('APP_NAME', 'CaffeineOverflow'),
 
     /*
     |--------------------------------------------------------------------------
