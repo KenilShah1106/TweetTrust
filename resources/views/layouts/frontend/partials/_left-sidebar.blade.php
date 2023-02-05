@@ -2,7 +2,7 @@
     <div class="left-sidebar">
         <ul class="list-group mt20 sidebar-items">
             <li class="list-group-item">
-                <a href="{{route('frontend.questions.index')}}" class="sidebar-item left-sidebar-item">
+                <a href="{{route('frontend.tweets.index')}}" class="sidebar-item left-sidebar-item">
                     <i class="bi bi-house-door"></i>
                 </a>
             </li>
@@ -18,8 +18,8 @@
                 @endauth
             </li>
             <li class="list-group-item">
-                <a href="{{route('frontend.questions.index')}}" class="sidebar-item">
-                    <i class="bi bi-question-circle"></i>
+                <a href="{{route('frontend.tweets.index')}}" class="sidebar-item">
+                    <i class="bi bi-tweet-circle"></i>
                 </a>
             </li>
             <li class="list-group-item">
@@ -37,7 +37,7 @@
     <div class="left-sidebar-hover">
         <ul class="list-group mt20 sidebar-items">
             <li class="list-group-item">
-                <a href="{{route('frontend.questions.index')}}" class="sidebar-item">
+                <a href="{{route('frontend.tweets.index')}}" class="sidebar-item">
                     Home
                 </a>
             </li>
@@ -54,17 +54,17 @@
             </li>
             <li class="list-group-item dropdown">
                 <a href="" class="sidebar-item" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Questions <i class="bi bi-caret-down-fill"></i>
+                    Tweets <i class="bi bi-caret-down-fill"></i>
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <li>
-                        <a class="dropdown-item" href="{{route('frontend.questions.index')}}">Recent Questions</a>
+                        <a class="dropdown-item" href="{{route('frontend.tweets.index')}}">Recent Tweets</a>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="{{route('frontend.questions.index')}}">Popular Questions</a>
+                        <a class="dropdown-item" href="{{route('frontend.tweets.index')}}">Popular Tweets</a>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="{{route('frontend.questions.index')}}">Hot Questions</a>
+                        <a class="dropdown-item" href="{{route('frontend.tweets.index')}}">Hot Tweets</a>
                     </li>
                 </ul>
             </li>

@@ -16,12 +16,11 @@ class UserCollectionCaster implements Caster
                 name: $data['name'],
                 email: $data['email'],
                 about: $data['about'],
-                location: $data['location'],
-                role: $data['role'],
-                reputation: $data['reputation'],
                 created_at: $data['created_at'],
                 created_date: (new Carbon($data['created_at']))->diffForHumans(),
                 updated_at: $data['updated_at'],
+                avatar: $data['avatar'],
+                cover_image: $data['cover_image'],
                 updated_date: (new Carbon($data['updated_at']))->diffForHumans(),
             );
         }, $value));

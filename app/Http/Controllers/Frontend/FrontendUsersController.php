@@ -19,8 +19,8 @@ class FrontendUsersController extends Controller
     }
     public function show(User $user)
     {
-        $questions = $user->questions()->latest()->paginate(3);
-        return view('frontend.users.show', compact(['user', 'questions']));
+        $tweets = $user->tweets()->latest()->paginate(3);
+        return view('frontend.users.show', compact(['user', 'tweets']));
     }
     public function edit(User $user)
     {

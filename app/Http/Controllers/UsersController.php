@@ -16,7 +16,6 @@ class UsersController extends Controller
     {
         $user->update([
             'name' => $request->name,
-            'location' => $request->location,
             'about' => $request->about
         ]);
         return redirect(route('frontend.users.show', $user->id));

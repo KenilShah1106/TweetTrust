@@ -17,12 +17,7 @@ class User extends Authenticatable
     const ADMIN = 1;
     const CONTRIBUTOR = 2;
     const USER = 3;
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
-
+    protected $guarded = ['id'];
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -66,66 +61,66 @@ class User extends Authenticatable
     /**
      * RELATIONSHIP METHODS
      */
-    public function questions()
+    public function tweets()
     {
-        return $this->hasMany(Question::class);
+        return $this->hasMany(Tweet::class);
     }
-    public function answers()
+    public function replies()
     {
-        return $this->hasMany(Answer::class);
+        return $this->hasMany(Replies::class);
     }
     public function tags()
     {
         return $this->hasMany(Tag::class);
     }
-    public function votesQuestion()
+    public function votesTweet()
     {
-        return $this->morphedByMany(Question::class, 'vote')->withTimestamps();
+        return $this->morphedByMany(Tweet::class, 'vote')->withTimestamps();
     }
-    public function votesAnswer()
+    public function votesReplies()
     {
-        return $this->morphedByMany(Answer::class, 'vote')->withTimestamps();
+        return $this->morphedByMany(Replies::class, 'vote')->withTimestamps();
     }
 
      /**
-     * Helper methods for Question
+     * Helper methods for Tweet
      */
-    public function hasQuestionUpvote($question_id)
+    public function hasTweetUpvote($tweet_id)
     {
-        if(gettype($question_id) == "integer") {
-            return auth()->user()->votesQuestion()->where(['vote' => 1, 'vote_id' => $question_id, 'vote_type'=> Question::class])->exists();
+        if(gettype($tweet_id) == "integer") {
+            return auth()->user()->votesTweet()->where(['vote' => 1, 'vote_id' => $tweet_id, 'vote_type'=> Tweet::class])->exists();
         }
         return false;
     }
-    public function hasQuestionDownvote($question_id)
+    public function hasTweetDownvote($tweet_id)
     {
-        if(gettype($question_id) == "integer") {
-            return auth()->user()->votesQuestion()->where(['vote' => -1, 'vote_id' => $question_id, 'vote_type'=> Question::class])->exists();
+        if(gettype($tweet_id) == "integer") {
+            return auth()->user()->votesTweet()->where(['vote' => -1, 'vote_id' => $tweet_id, 'vote_type'=> Tweet::class])->exists();
         }
         return false;
     }
-    public function hasVoteForQuestion($question_id)
+    public function hasVoteForTweet($tweet_id)
     {
-        return ($this->hasQuestionUpvote($question_id) || $this->hasQuestionDownvote($question_id));
+        return ($this->hasTweetUpvote($tweet_id) || $this->hasTweetDownvote($tweet_id));
     }
 
-    public function hasAnswerUpvote($answer_id)
+    public function hasRepliesUpvote($reply_id)
     {
-        if(gettype($answer_id) == "integer") {
-            return auth()->user()->votesAnswer()->where(['vote' => 1, 'vote_id' => $answer_id, 'vote_type'=> Answer::class])->exists();
+        if(gettype($reply_id) == "integer") {
+            return auth()->user()->votesReplies()->where(['vote' => 1, 'vote_id' => $reply_id, 'vote_type'=> Replies::class])->exists();
         }
         return false;
     }
-    public function hasAnswerDownvote($answer_id)
+    public function hasRepliesDownvote($reply_id)
     {
-        if(gettype($answer_id) == "integer") {
-            return auth()->user()->votesAnswer()->where(['vote' => -1, 'vote_id' => $answer_id, 'vote_type' => Answer::class])->exists();
+        if(gettype($reply_id) == "integer") {
+            return auth()->user()->votesReplies()->where(['vote' => -1, 'vote_id' => $reply_id, 'vote_type' => Replies::class])->exists();
         }
         return false;
     }
-    public function hasVoteForAnswer($answer_id)
+    public function hasVoteForReplies($reply_id)
     {
-        return ($this->hasAnswerUpvote($answer_id) || $this->hasAnswerDownvote($answer_id));
+        return ($this->hasRepliesUpvote($reply_id) || $this->hasRepliesDownvote($reply_id));
     }
 
     public function toDTO(): UserDTO
@@ -139,8 +134,8 @@ class User extends Authenticatable
             role: $this->role,
             avatar: $this->avatar,
             reputation: $this->reputation,
-            questions: gettype($this->questions) == 'array' ? $this->questions : null,
-            answers: gettype($this->answers) == 'array' ? $this->answers : null,
+            tweets: gettype($this->tweets) == 'array' ? $this->tweets : null,
+            replies: gettype($this->replies) == 'array' ? $this->replies : null,
             tags: gettype($this->tags) == 'array' ? $this->tags : null,
             created_at: $this->created_at,
             updated_at: $this->updated_at,

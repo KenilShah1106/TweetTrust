@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\Models\Answer;
-use App\Models\Question;
+use App\Models\Replies;
+use App\Models\Tweet;
 use App\Models\Tag;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -22,16 +22,16 @@ class DatabaseSeeder extends Seeder
 
         User::factory(4)->create()->each(function(User $user) {
             Tag::factory(4)->create();
-            $user->questions()
+            $user->tweets()
                 ->saveMany(
-                    Question::factory(rand(2,5))->make()
+                    Tweet::factory(rand(2,5))->make()
                 )
-                ->each(function(Question $question) {
-                    $question->answers()->saveMany(
-                        Answer::factory(rand(2,7))->make()
+                ->each(function(Tweet $tweet) {
+                    $tweet->replies()->saveMany(
+                        Replies::factory(rand(2,7))->make()
                     );
 
-                    $question->tags()->attach(Tag::pluck('id')->random(rand(1,4)));
+                    $tweet->tags()->attach(Tag::pluck('id')->random(rand(1,4)));
                 });
         });
     }

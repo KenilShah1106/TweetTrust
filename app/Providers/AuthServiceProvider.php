@@ -2,12 +2,12 @@
 
 namespace App\Providers;
 
-use App\Models\Answer;
-use App\Models\Question;
+use App\Models\Replies;
+use App\Models\Tweet;
 use App\Models\Tag;
 use App\Models\User;
-use App\Policies\AnswerPolicy;
-use App\Policies\QuestionPolicy;
+use App\Policies\RepliesPolicy;
+use App\Policies\TweetPolicy;
 use App\Policies\TagPolicy;
 use App\Policies\UserPolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
@@ -22,8 +22,8 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         // 'App\Models\Model' => 'App\Policies\ModelPolicy',
-        Question::class => QuestionPolicy::class,
-        Answer::class => AnswerPolicy::class,
+        Tweet::class => TweetPolicy::class,
+        Replies::class => RepliesPolicy::class,
         User::class => UserPolicy::class,
         Tag::class => TagPolicy::class,
     ];

@@ -2,48 +2,48 @@
 
 namespace App\Http\Controllers;
 
-use App\DTO\Answers\AnswerDTO;
-use App\DTO\Questions\QuestionDTO;
-use App\Models\Answer;
-use App\Models\Question;
+use App\DTO\Replies\RepliesDTO;
+use App\DTO\Tweets\TweetDTO;
+use App\Models\Replies;
+use App\Models\Tweet;
 use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 class VotesController extends Controller
 {
-    public function voteQuestion(Question $question, int $vote)
+    public function voteTweet(Tweet $tweet, int $vote)
     {
         $authUser = auth()->user();
         try {
-            if($authUser->hasVoteForQuestion($question->id)) {
+            if($authUser->hasVoteForTweet($tweet->id)) {
                 //i will update
-                if(($vote === 1 && $authUser->hasQuestionUpvote($question->id))) {
+                if(($vote === 1 && $authUser->hasTweetUpvote($tweet->id))) {
                     // Has already liked and wants to unlike
-                    $question->updateVote($vote, 1);
-                } elseif(($vote === 1 && $authUser->hasQuestionDownvote($question->id))) {
+                    $tweet->updateVote($vote, 1);
+                } elseif(($vote === 1 && $authUser->hasTweetDownvote($tweet->id))) {
                     // Had disliked and now wants to like
-                    $question->updateVote($vote);
-                } elseif(($vote === -1 && $authUser->hasQuestionDownvote($question->id))) {
+                    $tweet->updateVote($vote);
+                } elseif(($vote === -1 && $authUser->hasTweetDownvote($tweet->id))) {
                     // Has already disliked and wants to undislike
-                    $question->updateVote($vote, -1);
-                } elseif(($vote === -1 && $authUser->hasQuestionUpvote($question->id))) {
+                    $tweet->updateVote($vote, -1);
+                } elseif(($vote === -1 && $authUser->hasTweetUpvote($tweet->id))) {
                     // Had liked and now wants to dislike
-                    $question->updateVote($vote);
+                    $tweet->updateVote($vote);
                 }
 
             }else {
                 // i will create a new vote
-                $question->vote($vote);
+                $tweet->vote($vote);
             }
             return new JsonResponse([
                 'success' => [
-                    'question' => new QuestionDTO(
-                        id: $question->id,
-                        upvotes_count: $question->upvotes_count,
-                        downvotes_count: $question->downvotes_count,
-                        has_question_upvote: $authUser->hasQuestionUpvote($question->id),
-                        has_question_downvote: $authUser->hasQuestionDownvote($question->id),
+                    'tweet' => new TweetDTO(
+                        id: $tweet->id,
+                        likes_count: $tweet->likes_count,
+                        report_spam_count: $tweet->report_spam_count,
+                        has_tweet_upvote: $authUser->hasTweetUpvote($tweet->id),
+                        has_tweet_downvote: $authUser->hasTweetDownvote($tweet->id),
                     ),
                 ]
             ]);
@@ -54,38 +54,38 @@ class VotesController extends Controller
         }
     }
 
-    public function voteAnswer(Question $question, Answer $answer, int $vote)
+    public function voteReplies(Tweet $tweet, Replies $reply, int $vote)
     {
         try {
             $authUser = auth()->user();
-            if($authUser->hasVoteForAnswer($answer->id)) {
+            if($authUser->hasVoteForReplies($reply->id)) {
                 //i will update
-                if(($vote === 1 && $authUser->hasAnswerUpvote($answer->id))) {
+                if(($vote === 1 && $authUser->hasRepliesUpvote($reply->id))) {
                     // Has already liked and wants to unlike
-                    $answer->updateVote($vote, 1);
-                } elseif(($vote === 1 && $authUser->hasAnswerDownvote($answer->id))) {
+                    $reply->updateVote($vote, 1);
+                } elseif(($vote === 1 && $authUser->hasRepliesDownvote($reply->id))) {
                     // Had disliked and now wants to like
-                    $answer->updateVote($vote);
-                } elseif(($vote === -1 && $authUser->hasAnswerDownvote($answer->id))) {
+                    $reply->updateVote($vote);
+                } elseif(($vote === -1 && $authUser->hasRepliesDownvote($reply->id))) {
                     // Has already disliked and wants to undislike
-                    $answer->updateVote($vote, -1);
-                } elseif(($vote === -1 && $authUser->hasAnswerUpvote($answer->id))) {
+                    $reply->updateVote($vote, -1);
+                } elseif(($vote === -1 && $authUser->hasRepliesUpvote($reply->id))) {
                     // Had liked and now wants to dislike
-                    $answer->updateVote($vote);
+                    $reply->updateVote($vote);
                 }
 
             }else {
                 // i will create a new vote
-                $answer->vote($vote);
+                $reply->vote($vote);
             }
             return new JsonResponse([
                 'success' => [
-                    'answer' => new AnswerDTO(
-                        id: $answer->id,
-                        upvotes_count: $answer->upvotes_count,
-                        downvotes_count: $answer->downvotes_count,
-                        has_answer_upvote: $authUser->hasAnswerUpvote($answer->id),
-                        has_answer_downvote: $authUser->hasAnswerDownvote($answer->id),
+                    'reply' => new RepliesDTO(
+                        id: $reply->id,
+                        likes_count: $reply->likes_count,
+                        report_spam_count: $reply->report_spam_count,
+                        has_reply_upvote: $authUser->hasRepliesUpvote($reply->id),
+                        has_reply_downvote: $authUser->hasRepliesDownvote($reply->id),
                     ),
                 ]
             ]);

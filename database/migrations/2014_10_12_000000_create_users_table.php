@@ -1,5 +1,6 @@
 <?php
 
+use App\Constants\TweetConstants;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -19,10 +20,8 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->text('about')->nullable();
-            $table->string('location')->nullable();
-            $table->string('role')->default('user');
-            $table->unsignedInteger('reputation')->default(0);
             $table->timestamp('email_verified_at')->nullable();
+            $table->enum('status', TweetConstants::STATUS);
             $table->rememberToken();
             $table->timestamps();
         });

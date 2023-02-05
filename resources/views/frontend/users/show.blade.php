@@ -22,8 +22,8 @@
             <p class="user-location mb4"><i class="bi bi-geo-alt-fill"></i> {{$user->location}}</p>
             <div class="user-stats">
                 <p class="stat-container mb4">Reputation earned - <span class="stat">{{$user->reputation}}</span></p>
-                <p class="stat-container mb4">Questions asked - <span class="stat">{{$user->questions->count()}}</span></p>
-                <p class="stat-container mb4">Answers given - <span class="stat">{{$user->answers->count()}}</span></p>
+                <p class="stat-container mb4">Tweets asked - <span class="stat">{{$user->tweets->count()}}</span></p>
+                <p class="stat-container mb4">Replies given - <span class="stat">{{$user->replies->count()}}</span></p>
             </div>
             <p class="user-about mb4">{{$user->about}}</p>
 
@@ -32,47 +32,47 @@
     <div class="row mt20">
         <div class="user-activity w100">
             <p class="section-heading">User Activity</p>
-            @if($user->questions->count() > 0)
+            @if($user->tweets->count() > 0)
                 <ul class="fast-filters list-group list-group-horizontal align-items-center w25 mx-0">
                     <li class="list-group-item list-group-item-action p-0">
-                        <a href="" class="fast-filter">Questions asked</a>
+                        <a href="" class="fast-filter">Tweets asked</a>
                     </li>
                     <li class="list-group-item list-group-item-action p-0">
-                        <a href="" class="fast-filter">Answers given</a>
+                        <a href="" class="fast-filter">Replies given</a>
                     </li>
                 </ul>
                 <table class="table table-bordered mb-0 mt8">
                     <thead class="thead-dark">
                         <tr>
-                            <th>Question Title</th>
-                            <th class="text-center">Got Answer</th>
+                            <th>Tweet Title</th>
+                            <th class="text-center">Got Replies</th>
                             <th>Date</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($questions as $question)
+                        @foreach ($tweets as $tweet)
                             <tr>
-                                <td>{{$question->title}}</td>
-                                <td class="text-center status"><i class="{{$question->answer_style}}"></i></td>
+                                <td>{{$tweet->title}}</td>
+                                <td class="text-center status"><i class="{{$tweet->answer_style}}"></i></td>
                                 <td>July 26, 2021 at 12:05</td>
                             </tr>
                         @endforeach
                     </tbody>
                 </table>
                 <div class="text-right mb16 mt8">
-                    See all <strong><a href="">Questions</a></strong> and <strong><a href="">Answers -></a></strong>
+                    See all <strong><a href="">Tweets</a></strong> and <strong><a href="">Replies -></a></strong>
                 </div>
                 <div class="alert bg-outline-info alert-dismissible fade show" role="alert">
                     <strong class="tips">
                         Quick Tip:
                         <span class="tip mx16">
-                            <i class="bi bi-check-circle mr2"></i> Question was answered
+                            <i class="bi bi-check-circle mr2"></i> Tweet was answered
                         </span>
                         <span class="tip mr16">
-                            <i class="bi bi-check-circle-fill text-success mr2"></i> Question has best answer
+                            <i class="bi bi-check-circle-fill text-success mr2"></i> Tweet has best answer
                         </span>
                         <span class="mr16">
-                            <i class="bi bi-x-circle-fill text-danger mr2"></i> Question was not answered
+                            <i class="bi bi-x-circle-fill text-danger mr2"></i> Tweet was not answered
                         </span>
                     </strong>
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">

@@ -40,9 +40,9 @@
             <div class="tag-desc my12">
                 {!! \Illuminate\Support\Str::limit($tag->desc, 30)!!}
             </div>
-            <div class="questions-count">
-                <i class="bi bi-question-circle mr8"></i>
-                <span>{{$tag->questions->count()}} questions</span>
+            <div class="tweets-count">
+                <i class="bi bi-tweet-circle mr8"></i>
+                <span>{{$tag->tweets->count()}} tweets</span>
             </div>
         </div>
     @endforeach

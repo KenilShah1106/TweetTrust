@@ -2,7 +2,7 @@
 
 namespace App\DTO\Tags;
 
-use App\DTO\Questions\QuestionCollection;
+use App\DTO\Tweets\TweetCollection;
 use App\DTO\Users\UserDTO;
 use App\Models\Tag;
 use Spatie\DataTransferObject\DataTransferObject;
@@ -12,9 +12,9 @@ class TagDTO extends DataTransferObject
     public ?int $id;
     public ?string $name;
     public ?string $desc;
-    public ?array $questions;
+    public ?array $tweets;
     public ?UserDTO $creator;
-    public ?QuestionCollection $questions_collection;
+    public ?TweetCollection $tweets_collection;
     public ?string $created_at;
     public ?string $created_date;
     public ?string $updated_at;

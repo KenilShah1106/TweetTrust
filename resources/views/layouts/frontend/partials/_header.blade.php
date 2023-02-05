@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-12 d-flex align-items-center justify-content-between p-0">
                     <div class="col-3 header-left">
-                        <a href="{{route('frontend.questions.index')}}" class="project-title m-0">CaffeineOverflow</a>
+                        <a href="{{route('frontend.tweets.index')}}" class="project-title m-0">TweetTrust</a>
                     </div>
                     <div class="col-9 header-right">
                         <div class="row d-flex align-items-center">

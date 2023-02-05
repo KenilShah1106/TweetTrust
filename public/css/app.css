@@ -14222,11 +14222,11 @@ h3 {
   content: "";
 }
 
-.bi-patch-question-fill::before {
+.bi-patch-tweet-fill::before {
   content: "";
 }
 
-.bi-patch-question::before {
+.bi-patch-tweet::before {
   content: "";
 }
 
@@ -14506,39 +14506,39 @@ h3 {
   content: "";
 }
 
-.bi-question-circle-fill::before {
+.bi-tweet-circle-fill::before {
   content: "";
 }
 
-.bi-question-circle::before {
+.bi-tweet-circle::before {
   content: "";
 }
 
-.bi-question-diamond-fill::before {
+.bi-tweet-diamond-fill::before {
   content: "";
 }
 
-.bi-question-diamond::before {
+.bi-tweet-diamond::before {
   content: "";
 }
 
-.bi-question-octagon-fill::before {
+.bi-tweet-octagon-fill::before {
   content: "";
 }
 
-.bi-question-octagon::before {
+.bi-tweet-octagon::before {
   content: "";
 }
 
-.bi-question-square-fill::before {
+.bi-tweet-square-fill::before {
   content: "";
 }
 
-.bi-question-square::before {
+.bi-tweet-square::before {
   content: "";
 }
 
-.bi-question::before {
+.bi-tweet::before {
   content: "";
 }
 
@@ -15826,7 +15826,7 @@ h3 {
   content: "";
 }
 
-.bi-question-lg::before {
+.bi-tweet-lg::before {
   content: "";
 }
 
@@ -16817,7 +16817,7 @@ hr {
   color: var(--gray-1);
   max-width: 165px;
 }
-.hero .hero-body .tag-card .questions-count {
+.hero .hero-body .tag-card .tweets-count {
   display: flex;
   align-items: center;
   color: var(--gray-1);

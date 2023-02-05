@@ -1,11 +1,11 @@
 <?php
 
-use App\Http\Controllers\AnswersController;
-use App\Http\Controllers\Frontend\FrontendAnswersController;
-use App\Http\Controllers\Frontend\FrontendQuestionsController;
+use App\Http\Controllers\RepliesController;
+use App\Http\Controllers\Frontend\FrontendRepliesController;
+use App\Http\Controllers\Frontend\FrontendTweetsController;
 use App\Http\Controllers\Frontend\FrontendTagsController;
 use App\Http\Controllers\Frontend\FrontendUsersController;
-use App\Http\Controllers\QuestionsController;
+use App\Http\Controllers\TweetsController;
 use App\Http\Controllers\TagsController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\VotesController;
@@ -28,14 +28,14 @@ Auth::routes();
 Route::middleware(['auth'])->group(function() {
 
     /* QUESTION */
-    Route::resource('questions', QuestionsController::class)->except('show', 'create', 'edit');
+    Route::resource('tweets', TweetsController::class)->except('show', 'create', 'edit');
 
     /* TAGS */
     Route::resource('tags', TagsController::class)->except('show', 'create', 'edit');
 
     /* ANSWER */
-    Route::resource('questions.answers', AnswersController::class)->except('show', 'create', 'edit');
-    Route::put('questions/{question}/answers/{answer}/mark-as-best', [QuestionsController::class, 'markAsBest'])->name('questions.answers.markAsBest');
+    Route::resource('tweets.replies', RepliesController::class)->except('show', 'create', 'edit');
+    Route::put('tweets/{tweet}/replies/{answer}/mark-as-best', [TweetsController::class, 'markAsBest'])->name('tweets.replies.markAsBest');
 
     /* USER */
     Route::resource('users', UsersController::class)->except('show', 'create', 'edit');
@@ -43,12 +43,12 @@ Route::middleware(['auth'])->group(function() {
 
 /* FRONTEND ROUTES */
 
-/* Question */
-Route::get('/', [FrontendQuestionsController::class, 'index'])->name('frontend.questions.index');
-Route::get('/questions/create', [FrontendQuestionsController::class, 'create'])->name('frontend.questions.create');
-Route::get('/questions/{question}', [FrontendQuestionsController::class, 'show'])->name('frontend.questions.show');
-Route::get('/questions/{question}/edit', [FrontendQuestionsController::class, 'edit'])->name('frontend.questions.edit');
-Route::post('/questions/{question}/votes/{vote}', [VotesController::class, 'voteQuestion'])->name('questions.vote');
+/* Tweet */
+Route::get('/', [FrontendTweetsController::class, 'index'])->name('frontend.tweets.index');
+Route::get('/tweets/create', [FrontendTweetsController::class, 'create'])->name('frontend.tweets.create');
+Route::get('/tweets/{tweet}', [FrontendTweetsController::class, 'show'])->name('frontend.tweets.show');
+Route::get('/tweets/{tweet}/edit', [FrontendTweetsController::class, 'edit'])->name('frontend.tweets.edit');
+Route::post('/tweets/{tweet}/votes/{vote}', [VotesController::class, 'voteTweet'])->name('tweets.vote');
 
 /* Tag */
 Route::get('/tags', [FrontendTagsController::class, 'index'])->name('frontend.tags.index');
@@ -62,6 +62,6 @@ Route::get('/users/notifications', [FrontendUsersController::class, 'notificatio
 Route::get('/users/{user}', [FrontendUsersController::class, 'show'])->name('frontend.users.show');
 Route::get('/users/{user}/edit', [FrontendUsersController::class, 'edit'])->name('frontend.users.edit');
 
-/* Answer */
-Route::get('/questions/{question}/answers/{answer}', [FrontendAnswersController::class, 'edit'])->name('frontend.questions.answers.edit');
-Route::post('/questions/{question}/answers/{answer}/votes/{vote}', [VotesController::class, 'voteAnswer'])->name('questions.answers.vote');
+/* Replies */
+Route::get('/tweets/{tweet}/replies/{answer}', [FrontendRepliesController::class, 'edit'])->name('frontend.tweets.replies.edit');
+Route::post('/tweets/{tweet}/replies/{answer}/votes/{vote}', [VotesController::class, 'voteReplies'])->name('tweets.replies.vote');

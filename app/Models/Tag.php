@@ -19,9 +19,9 @@ class Tag extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
-    public function questions()
+    public function tweets()
     {
-        return $this->belongsToMany(Question::class)->withTimestamps();
+        return $this->belongsToMany(Tweet::class)->withTimestamps();
     }
 
     /**
@@ -34,7 +34,7 @@ class Tag extends Model
             name: $this->name,
             desc: $this->desc,
             creator: $this->creator->toDTO(),
-            questions: gettype($this->questions) == 'array' ? $this->questions : null,
+            tweets: gettype($this->tweets) == 'array' ? $this->tweets : null,
             created_at: $this->created_at,
             updated_at: $this->updated_at,
             created_date: (new Carbon($this->created_at))->diffForHumans(),

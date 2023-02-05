@@ -22,8 +22,8 @@ class FrontendTagsController extends Controller
     public function show(int $id)
     {
         $tag = Tag::with('creator')->findOrFail($id);
-        $questions = $tag->questions()->latest()->paginate(3);
-        return view('frontend.tags.show', compact(['tag', 'questions']));
+        $tweets = $tag->tweets()->latest()->paginate(3);
+        return view('frontend.tags.show', compact(['tag', 'tweets']));
     }
 
     public function create()

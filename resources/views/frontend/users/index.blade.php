@@ -53,8 +53,8 @@
                 </div>
                 <div class="user-stats">
                     <p><span class="stat">{{$user->reputation}}</span> reputation</p>
-                    <p><span class="stat">{{$user->answers->count()}}</span> answers</p>
-                    <p><span class="stat">{{$user->questions->count()}}</span> questions</p>
+                    <p><span class="stat">{{$user->replies->count()}}</span> replies</p>
+                    <p><span class="stat">{{$user->tweets->count()}}</span> tweets</p>
                 </div>
                 <span class="m-0 badge badge-pill bg-outline-primary">{{$user->user_role}}</span>
             </div>

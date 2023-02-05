@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Constants\TweetConstants;
+use App\Models\Tweet;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
@@ -28,10 +30,7 @@ class UserFactory extends Factory
             'email' => $this->faker->unique()->safeEmail(),
             'email_verified_at' => now(),
             'password' => Hash::make('password'),
-            'about' => $this->faker->sentence(rand(10,15)),
-            'location' => $this->faker->country(),
-            'role' => $this->faker->randomElement([User::ADMIN, User::CONTRIBUTOR, User::USER]),
-            'reputation' => rand(100, 200),
+            'status' => TweetConstants::VALID,
             'remember_token' => Str::random(10),
         ];
     }
