@@ -10,7 +10,7 @@
     <div class="bg-white p16 br-10">
         <form id="tweetForm" action="{{route('tweets.store')}}" class="m-0" method="POST" enctype="multipart/form-data">
             @csrf
-            <div class="form-group">
+            {{-- <div class="form-group">
                 <label class="mb4">Title</label>
                 <input type="text"
                        name="title"
@@ -21,7 +21,7 @@
                 @error('title')
                     <small id="errorHelp" class="form-text text-danger">{{ $message }}</small>
                 @enderror
-            </div>
+            </div> --}}
 
             <div class="form-group">
                 <label for="body">Body</label>

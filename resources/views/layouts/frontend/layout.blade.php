@@ -53,12 +53,10 @@
    <script>
         $("#tweetBtn").click(function (e) {
             filter = new Filter();
-            $title = $("#title").val();
             $body = $("#body").val();
             $filteredBody = filter.clean($body);
-            $filteredTitle = filter.clean($title);
             console.log(e);
-            if($body != $filteredBody || $title != $filteredTitle) {
+            if($body != $filteredBody) {
                 window.alert("Hate speech recognized");
                 e.preventDefault();
             } 
