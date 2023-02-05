@@ -13,7 +13,7 @@
             <li class="list-group-item list-group-item-action p-0">
                 <a href="" class="fast-filter">New</a>
             </li>
-            <li class="list-group-item list-group-item-action p-0">
+            {{-- <li class="list-group-item list-group-item-action p-0">
                 <a href="" class="fast-filter">Reputation</a>
             </li>
             <li class="list-group-item list-group-item-action p-0">
@@ -21,7 +21,7 @@
             </li>
             <li class="list-group-item list-group-item-action p-0">
                 <a href="" class="fast-filter">Contributors</a>
-            </li>
+            </li> --}}
         </ul>
         <form action="" class="input-group d-flex search-field w25">
             <input type="text"
