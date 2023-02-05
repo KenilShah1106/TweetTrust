@@ -1,5 +1,6 @@
 require('./bootstrap');
 require('trix/dist/trix');
+window.Filter = require('bad-words/lib/badwords');
 
 /**
  * SIDEBAR DROPDOWN HOVER

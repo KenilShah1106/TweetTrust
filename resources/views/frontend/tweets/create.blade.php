@@ -8,12 +8,13 @@
 
 @section('hero-body')
     <div class="bg-white p16 br-10">
-        <form action="{{route('tweets.store')}}" class="m-0" method="POST" enctype="multipart/form-data">
+        <form id="tweetForm" action="{{route('tweets.store')}}" class="m-0" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label class="mb4">Title</label>
                 <input type="text"
                        name="title"
+                       id="title"
                        value="{{old('title')}}"
                        class="form-control br-10 p12"
                        placeholder="eg: What is Java?">
@@ -24,7 +25,7 @@
 
             <div class="form-group">
                 <label for="body">Body</label>
-                <input id="body" type="hidden" name="body" value="{{ old('body')}}">
+                <input id="body" type="hidden" id="body" name="body" value="{{ old('body')}}">
                 <trix-editor input="body" class="p12" placeholder="Elaborate your tweet..."></trix-editor>
                 @error('body')
                     <small id="errorHelp" class="form-text text-danger">{{ $message }}</small>
@@ -49,7 +50,7 @@
             </div>
 
             <div class="form-group text-right">
-                <button type="submit" class="btn btn-success py8">Submit</button>
+                <button type="submit" id="tweetBtn" class="btn btn-success py8">Submit</button>
             </div>
         </form>
     </div>
@@ -77,5 +78,7 @@
             dateFormat : "Y-m-d H:i",
             minDate : new Date(),
         });
+        
+        
     </script>
 @endsection

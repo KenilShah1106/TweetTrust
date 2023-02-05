@@ -13,14 +13,14 @@
                                 </ul>
                             </div>
                             <div class="col-7">
-                                <form action="" class="input-group d-flex search-field">
+                                <form action="" id="searchField" class="input-group d-flex search-field">
                                     <input type="text"
                                             name="search"
                                             value="{{ request('search')}}"
                                             class="form-control"
                                             placeholder="Search ....">
                                     <div class="input-group-append">
-                                        <button type="submit" name="submit" class="btn bg-white">
+                                        <button type="submit" name="submit" id="searchBtn" class="btn bg-white">
                                             <i class="bi bi-search"></i>
                                         </button>
                                     </div>

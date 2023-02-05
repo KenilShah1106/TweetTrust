@@ -14222,11 +14222,11 @@ h3 {
   content: "";
 }
 
-.bi-patch-tweet-fill::before {
+.bi-patch-question-fill::before {
   content: "";
 }
 
-.bi-patch-tweet::before {
+.bi-patch-question::before {
   content: "";
 }
 
@@ -14506,39 +14506,39 @@ h3 {
   content: "";
 }
 
-.bi-tweet-circle-fill::before {
+.bi-question-circle-fill::before {
   content: "";
 }
 
-.bi-tweet-circle::before {
+.bi-question-circle::before {
   content: "";
 }
 
-.bi-tweet-diamond-fill::before {
+.bi-question-diamond-fill::before {
   content: "";
 }
 
-.bi-tweet-diamond::before {
+.bi-question-diamond::before {
   content: "";
 }
 
-.bi-tweet-octagon-fill::before {
+.bi-question-octagon-fill::before {
   content: "";
 }
 
-.bi-tweet-octagon::before {
+.bi-question-octagon::before {
   content: "";
 }
 
-.bi-tweet-square-fill::before {
+.bi-question-square-fill::before {
   content: "";
 }
 
-.bi-tweet-square::before {
+.bi-question-square::before {
   content: "";
 }
 
-.bi-tweet::before {
+.bi-question::before {
   content: "";
 }
 
@@ -15826,7 +15826,7 @@ h3 {
   content: "";
 }
 
-.bi-tweet-lg::before {
+.bi-question-lg::before {
   content: "";
 }
 

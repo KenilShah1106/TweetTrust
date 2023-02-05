@@ -50,5 +50,19 @@
     <script src="{{asset('js/app.js')}}"></script>
 
     @yield('page-level-scripts')
+   <script>
+        $("#tweetBtn").click(function (e) {
+            filter = new Filter();
+            $title = $("#title").val();
+            $body = $("#body").val();
+            $filteredBody = filter.clean($body);
+            $filteredTitle = filter.clean($title);
+            console.log(e);
+            if($body != $filteredBody || $title != $filteredTitle) {
+                window.alert("Hate speech recognized");
+                e.preventDefault();
+            } 
+        });
+   </script>
 </body>
 </html>
