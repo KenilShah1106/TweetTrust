@@ -21,7 +21,6 @@
             <h2 class="user-name mb4">{{$user->name}}</h2>
             <p class="user-location mb4"><i class="bi bi-geo-alt-fill"></i> {{$user->location}}</p>
             <div class="user-stats">
-                <p class="stat-container mb4">Reputation earned - <span class="stat">{{$user->reputation}}</span></p>
                 <p class="stat-container mb4">Tweets asked - <span class="stat">{{$user->tweets->count()}}</span></p>
                 <p class="stat-container mb4">Replies given - <span class="stat">{{$user->replies->count()}}</span></p>
             </div>
@@ -52,8 +51,8 @@
                     <tbody>
                         @foreach ($tweets as $tweet)
                             <tr>
-                                <td>{{$tweet->title}}</td>
-                                <td class="text-center status"><i class="{{$tweet->answer_style}}"></i></td>
+                                <td>{!!$tweet->body!!}</td>
+                                <td class="text-center status"><i class="{{$tweet->replies_style}}"></i></td>
                                 <td>July 26, 2021 at 12:05</td>
                             </tr>
                         @endforeach

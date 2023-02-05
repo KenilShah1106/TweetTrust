@@ -19,7 +19,7 @@
             </li>
             <li class="list-group-item">
                 <a href="{{route('frontend.tweets.index')}}" class="sidebar-item">
-                    <i class="bi bi-tweet-circle"></i>
+                    <i class="bi bi-twitter"></i>
                 </a>
             </li>
             <li class="list-group-item">
@@ -53,11 +53,11 @@
                 @endauth
             </li>
             <li class="list-group-item dropdown">
-                <a href="" class="sidebar-item" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a href="{{route('frontend.tweets.index')}}" class="sidebar-item" id="dropdownMenuButton" aria-haspopup="true" aria-expanded="false">
                     Tweets
                 </a>
-                {{-- <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <li>
+                {{-- <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton"> --}}
+                    {{-- <li>
                         <a class="dropdown-item" href="{{route('frontend.tweets.index')}}">Recent Tweets</a>
                     </li>
                     <li>
@@ -65,8 +65,8 @@
                     </li>
                     <li>
                         <a class="dropdown-item" href="{{route('frontend.tweets.index')}}">Hot Tweets</a>
-                    </li>
-                </ul> --}}
+                    </li> --}}
+                {{-- </ul> --}}
             </li>
             <li class="list-group-item">
                 <a href="{{route('frontend.tags.index')}}" class="sidebar-item">
