@@ -6,6 +6,7 @@ use App\Constants\TweetConstants;
 use App\DTO\Tweets\TweetDTO;
 use App\Helpers\Utils;
 use App\Helpers\Votable;
+use App\Scopes\TweetScopes;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -15,7 +16,7 @@ use Illuminate\Support\Str;
 
 class Tweet extends Model implements TweetConstants
 {
-    use HasFactory, Votable;
+use HasFactory, Votable, TweetScopes;
 
     protected $guarded = ['id'];
 

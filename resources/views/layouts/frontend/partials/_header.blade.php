@@ -10,12 +10,6 @@
                         <div class="row d-flex align-items-center">
                             <div class="col-3">
                                 <ul class="navbar-nav flex-row">
-                                    <li class="nav-item pr20">
-                                        <a href="" class="nav-link text-dark">About Us</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="" class="nav-link text-dark">Contact Us</a>
-                                    </li>
                                 </ul>
                             </div>
                             <div class="col-7">

@@ -54,9 +54,9 @@
             </li>
             <li class="list-group-item dropdown">
                 <a href="" class="sidebar-item" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Tweets <i class="bi bi-caret-down-fill"></i>
+                    Tweets
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                {{-- <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <li>
                         <a class="dropdown-item" href="{{route('frontend.tweets.index')}}">Recent Tweets</a>
                     </li>
@@ -66,7 +66,7 @@
                     <li>
                         <a class="dropdown-item" href="{{route('frontend.tweets.index')}}">Hot Tweets</a>
                     </li>
-                </ul>
+                </ul> --}}
             </li>
             <li class="list-group-item">
                 <a href="{{route('frontend.tags.index')}}" class="sidebar-item">

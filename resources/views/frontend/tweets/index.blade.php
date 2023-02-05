@@ -7,7 +7,7 @@
 @endsection
 
 @section('hero-header-right')
-    <a href="{{route('frontend.tweets.create')}}" class="btn btn-primary py12 px20">Ask a tweet</a>
+    <a href="{{route('frontend.tweets.create')}}" class="btn btn-primary py12 px20">Post a tweet</a>
 @endsection
 
 @section('hero-body')
@@ -18,7 +18,7 @@
             </div>
             <div class="section-details">
                 <div class="section-header">
-                    <span class="user-info">Asked by: <a href="{{route('frontend.users.show', $tweet->author->id)}}" class="author-name">{{$tweet->author->name}}</a> {{$tweet->created_date}}</span>
+                    <span class="user-info">Posted by: <a href="{{route('frontend.users.show', $tweet->author->id)}}" class="author-name">{{$tweet->author->name}}</a> {{$tweet->created_date}}</span>
                     <div class="tags-container">
                         <span class="ml12">Tags:</span>
                         <div class="tags">
@@ -35,10 +35,10 @@
                 <div class="section-footer d-flex mt8">
                     <div class="section-stats">
                         <div class="stat replies-count">
-                            <i class="bi bi-chat-right mr8"></i>{{$tweet->replies_count . " " .\Illuminate\Support\Str::plural('answer', $tweet->replies_count)}}
+                            <i class="bi bi-chat-right mr8"></i>{{$tweet->replies_count . " " .\Illuminate\Support\Str::plural('reply', $tweet->replies_count)}}
                         </div>
                         <div class="stat upvotes-count">
-                            <i class="bi bi-caret-up-fill mr8"></i>{{$tweet->likes_count . " " .\Illuminate\Support\Str::plural('upvote', $tweet->likes_count)}}
+                            <i class="bi bi-caret-up-fill mr8"></i>{{$tweet->likes_count . " " .\Illuminate\Support\Str::plural('like', $tweet->likes_count)}}
                         </div>
                         <div class="stat views-count">
                             {{-- <i class="bi bi-eye-fill mr8"></i>{{$tweet->views_count . " " .\Illuminate\Support\Str::plural('view', $tweet->views_count)}} --}}

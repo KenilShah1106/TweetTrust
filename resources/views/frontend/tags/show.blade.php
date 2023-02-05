@@ -59,9 +59,9 @@
                         <div class="stat views-count">
                             {{-- <i class="bi bi-eye-fill mr8"></i>{{$tweet->views_count}} views --}}
                         </div>
-                        <span class="stat best-answer-badge">
+                        {{-- <span class="stat best-answer-badge"> --}}
                             {{-- <i class="bi bi-check-circle mr8"></i>Best answer given by Jane Doe --}}
-                        </span>
+                        {{-- </span> --}}
                     </div>
                     <div class="view-tweet-btn-container">
                         <a href="{{route('frontend.tweets.show', $tweet->id)}}"  class="view-tweet-btn br-10 btn btn-sm btn-outline-primary no-border">View this tweet</a>
