@@ -1,9 +1,9 @@
 @extends('layouts.frontend.layout')
 
-@section('title', 'Ask Tweet')
+@section('title', 'Post Tweet')
 
 @section('hero-header-left')
-    <h2 class="hero-title m-0">Ask a Tweet</h2>
+    <h2 class="hero-title m-0">Post a Tweet</h2>
 @endsection
 
 @section('hero-body')
