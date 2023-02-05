@@ -12,7 +12,7 @@ class TweetService
 {
     public function index()
     {
-        $tweets = Tweet::with('author', 'replies', 'tags')->get()->sortByDesc('created_at');
+        $tweets = Tweet::search()->with('author', 'replies', 'tags')->get()->sortByDesc('created_at');
         $tweetDTOs = [];
 
         foreach($tweets as $tweet) {
